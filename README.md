@@ -20,7 +20,7 @@
         let temp = sensor.get_temp().unwrap();
         let cap = sensor.get_capacitance().unwrap();
         println!("Temperature: {:.02}", temp);
-        println!("Capacitances: {}", cap);
+        println!("Capacitance: {}", cap);
         let mut delay = Delay {};
         delay.delay_ms(2000u32);
     }
