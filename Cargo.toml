@@ -1,6 +1,6 @@
 [package]
 name = "stemma_soil_sensor"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Carl Fredrik Samson <cf@samson.no>"]
 description = "Library for reading data from Adafruit STEMMA Soil Sensor"
 repository = "https://github.com/cfsamson/embedded-stemma-soil-sensor"
