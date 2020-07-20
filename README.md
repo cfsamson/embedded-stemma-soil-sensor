@@ -29,16 +29,6 @@
 
 ## Using this library with other boards
 
-There are minor differences between this implementation and the one for the Arduino board. The two
-major differences are:
-
-1. Reading output from the sensor is **not** done in 32 byte chunks. This _could_ pose an issue.
-2. The timings to allow the sensor to process are slightly longer than the C implementation and
-is based on the Python library. This should not matter.
-
-If #1 is a problem I'll be positive to implement a `read` method which allows the user of the
-library to supply a buffer of the size they need. Leave an issue or a PR with the implementation
-and I'll add it.
-
-On #2, the short timings used in the C example continuously caused read errors when I tried it so
-I'm not sure lowering it is possible.
+Since this library relies on [rppal](https://github.com/golemparts/rppal/tree/master/src) for the
+I2C communication it won't work with other boards than the Raspberry Pi series boards as it is
+right now.

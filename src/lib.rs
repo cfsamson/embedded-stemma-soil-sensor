@@ -32,10 +32,9 @@
 //! There are a lot of `debug!` information in the code which will be available on debug builds.
 //! Attaching a logger and setting `RUST_LOG=debug` will yield a lot of information.
 use embedded_hal::blocking::delay::DelayUs;
-use rppal::i2c::{self, Error as I2CError};
+use rppal::i2c::{self, Error as I2CError, I2c};
 #[macro_use]
 extern crate log;
-use i2c::I2c;
 use thiserror::Error;
 
 mod regs;
@@ -49,7 +48,7 @@ const SENSOR_END_ADDR: u16 = 0x39;
 pub type Result<T> = std::result::Result<T, SoilSensErr>;
 
 pub struct SoilSensor<D: DelayUs<u16>> {
-    channel: i2c::I2c,
+    channel: I2c,
     delay: D,
 }
 
