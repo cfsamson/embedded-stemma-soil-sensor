@@ -32,3 +32,11 @@
 Since this library relies on [rppal](https://github.com/golemparts/rppal/tree/master/src) for the
 I2C communication it won't work with other boards than the Raspberry Pi series boards as it is
 right now.
+
+## Requirements
+
+This library should build on the following targets:
+
+  - armv7-unknown-linux-gnueabihf
+  - armv7-unknown-linux-musleabihf
+  - aarch64-unknown-linux-gnu
