@@ -3,7 +3,7 @@
  The implementation is based on the [Adafruit CircuitPython Seesaw library](https://github.com/adafruit/Adafruit_CircuitPython_seesaw).
 
  The library is tested and used on a Raspberry Pi 3 B+ board, running Raspbian but uses interfaces
- from `embedded_hal` for all operation so it should work in `no_std` environments as well.
+ from `embedded_hal` operations like sleep/delay and other system calls.
 
  ## Example
 
@@ -40,3 +40,9 @@ This library should build on the following targets:
   - armv7-unknown-linux-gnueabihf
   - armv7-unknown-linux-musleabihf
   - aarch64-unknown-linux-gnu
+
+## Additional notes
+
+Please make a note of that the repository includes a `.cargo/config` entry. This is excluded from
+the crate package. If you use this library from the repository directly make sure to change this
+(or remove it) so it doesn't cause problems for your build.

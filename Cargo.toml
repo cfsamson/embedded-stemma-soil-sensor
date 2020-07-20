@@ -1,6 +1,6 @@
 [package]
 name = "stemma_soil_sensor"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["Carl Fredrik Samson <cf@samson.no>"]
 description = "Library for reading data from Adafruit STEMMA Soil Sensor"
 repository = "https://github.com/cfsamson/embedded-stemma-soil-sensor"
@@ -10,6 +10,7 @@ readme = "README.md"
 categories = ["embedded"]
 keywords = ["stemma", "adafruit", "sensor", "moisture", "soil"]
 edition = "2018"
+exclude = [".cargo"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

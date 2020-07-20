@@ -3,7 +3,7 @@
 //! The implementation is based on the [Adafruit CircuitPython Seesaw library](https://github.com/adafruit/Adafruit_CircuitPython_seesaw).
 //!
 //! The library is tested and used on a Raspberry Pi 3 B+ board, running Raspbian but uses interfaces
-//! compatible with `embedded_hal` so it should work in `no_std` environments as well.
+//! from `embedded_hal` operations like sleep/delay and other system calls.
 //!
 //! ## Example
 //!
@@ -31,6 +31,7 @@
 //!
 //! There are a lot of `debug!` information in the code which will be available on debug builds.
 //! Attaching a logger and setting `RUST_LOG=debug` will yield a lot of information.
+//! 
 use embedded_hal::blocking::delay::DelayUs;
 use rppal::i2c::{self, Error as I2CError, I2c};
 #[macro_use]
