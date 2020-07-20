@@ -31,7 +31,7 @@
 //!
 //! There are a lot of `debug!` information in the code which will be available on debug builds.
 //! Attaching a logger and setting `RUST_LOG=debug` will yield a lot of information.
-//! 
+//!
 use embedded_hal::blocking::delay::DelayUs;
 use rppal::i2c::{self, Error as I2CError, I2c};
 #[macro_use]
@@ -134,10 +134,11 @@ mod init {
 
             match try_read_chan(&mut chan, adr, delay) {
                 Ok(resp) => {
+                    debug!("Found device with HW id: {}", resp);
                     if resp != regs::SEESAW_HW_ID_CODE {
                         return Err(SoilSensErr::from(I2CError::InvalidSlaveAddress(adr)));
                     } else {
-                        debug!("HW ID mismatch. Exp: {}, got: {}", resp, adr);
+                        debug!("HW ID match: exp {}, got: {}", resp, regs::SEESAW_HW_ID_CODE);
                         return Ok(chan);
                     }
                 }
@@ -167,8 +168,7 @@ mod init {
         delay.delay_us(STD_PROCESSING_DELAY_MICROS);
 
         let numbytes = chan.read(&mut buffer)?;
-        debug!("{} byte(s):", numbytes);
-        debug!("{:?}", buffer);
+        debug!("Got: {:?}", buffer);
         Ok(buffer[0])
     }
 }
